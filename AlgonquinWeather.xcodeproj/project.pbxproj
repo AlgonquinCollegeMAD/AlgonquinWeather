@@ -12,6 +12,9 @@
 		10C69CCB2AF433CE00A54479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CCA2AF433CE00A54479 /* Assets.xcassets */; };
 		10C69CCF2AF433CE00A54479 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CCE2AF433CE00A54479 /* Preview Assets.xcassets */; };
 		10C69CD62AF4393200A54479 /* LocationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CD52AF4393200A54479 /* LocationListViewModel.swift */; };
+		10C69CD92AF4678B00A54479 /* direct-geocoding-request.sh in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CD72AF4678B00A54479 /* direct-geocoding-request.sh */; };
+		10C69CDA2AF4678B00A54479 /* direct-geocoding-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CD82AF4678B00A54479 /* direct-geocoding-response.json */; };
+		10C69CDC2AF4685F00A54479 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CDB2AF4685F00A54479 /* LocationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		10C69CCC2AF433CE00A54479 /* AlgonquinWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlgonquinWeather.entitlements; sourceTree = "<group>"; };
 		10C69CCE2AF433CE00A54479 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		10C69CD52AF4393200A54479 /* LocationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewModel.swift; sourceTree = "<group>"; };
+		10C69CD72AF4678B00A54479 /* direct-geocoding-request.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "direct-geocoding-request.sh"; sourceTree = "<group>"; };
+		10C69CD82AF4678B00A54479 /* direct-geocoding-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "direct-geocoding-response.json"; sourceTree = "<group>"; };
+		10C69CDB2AF4685F00A54479 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,9 @@
 				10C69CC62AF433CD00A54479 /* AlgonquinWeatherApp.swift */,
 				10C69CC82AF433CD00A54479 /* LocationListView.swift */,
 				10C69CD52AF4393200A54479 /* LocationListViewModel.swift */,
+				10C69CDB2AF4685F00A54479 /* LocationModel.swift */,
+				10C69CD72AF4678B00A54479 /* direct-geocoding-request.sh */,
+				10C69CD82AF4678B00A54479 /* direct-geocoding-response.json */,
 				10C69CCA2AF433CE00A54479 /* Assets.xcassets */,
 				10C69CCC2AF433CE00A54479 /* AlgonquinWeather.entitlements */,
 				10C69CCD2AF433CE00A54479 /* Preview Content */,
@@ -131,6 +140,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				10C69CCF2AF433CE00A54479 /* Preview Assets.xcassets in Resources */,
+				10C69CDA2AF4678B00A54479 /* direct-geocoding-response.json in Resources */,
+				10C69CD92AF4678B00A54479 /* direct-geocoding-request.sh in Resources */,
 				10C69CCB2AF433CE00A54479 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C69CDC2AF4685F00A54479 /* LocationModel.swift in Sources */,
 				10C69CC92AF433CD00A54479 /* LocationListView.swift in Sources */,
 				10C69CC72AF433CD00A54479 /* AlgonquinWeatherApp.swift in Sources */,
 				10C69CD62AF4393200A54479 /* LocationListViewModel.swift in Sources */,

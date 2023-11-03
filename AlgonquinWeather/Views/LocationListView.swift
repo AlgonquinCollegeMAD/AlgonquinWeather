@@ -1,19 +1,35 @@
 import SwiftUI
 
+fileprivate enum ViewState {
+  case loading(String)
+  case empty
+  case idle([Location])
+}
+
 struct LocationListView: View {
-  @State var searchString = String()
-  @EnvironmentObject private var model: LocationModel
+  @State fileprivate var viewState: ViewState = .empty
   
   var body: some View {
     NavigationStack {
       VStack {
-        HStack {
-          SearchBoxView(searchString: $searchString)
-          SearchButton(searchString: $searchString)
-        }
-        .padding()
-        LocationsView(searchString: $searchString)
+        SearchView(viewState: $viewState)
+          .padding()
         
+        switch viewState {
+        case .loading(let string):
+          Spacer()
+          ProgressView("Searching for \(string)")
+          Spacer()
+        case .empty:
+          ContentUnavailableView {
+            Text("No locations selected")
+          } description: {
+            Text("Try to search for the name of a city, or country")
+          }
+          
+        case .idle(let array):
+          LocationsView(locations: array)
+        }
       }
       .navigationTitle("Weather")
     }
@@ -22,21 +38,33 @@ struct LocationListView: View {
 
 /** Locations List */
 fileprivate struct LocationsView: View {
-  @Binding var searchString: String
-  @EnvironmentObject private var model: LocationModel
+  var locations: [Location]
   
   var body: some View {
-    List(model.locations, id:\.self) { location in
+    List(locations, id:\.self) { location in
       Text( "\(location.name), \(location.state ?? ""), \(location.country)")
     }
     .listStyle(.plain)
   }
 }
 
+/** Search View */
+fileprivate struct SearchView: View {
+  @State var searchString = String()
+  @Binding var viewState: ViewState
+  
+  var body: some View {
+    HStack {
+      SearchBoxView(searchString: $searchString, viewState: $viewState)
+      SearchButtonView(searchString: $searchString, viewState: $viewState)
+    }
+  }
+}
+
 /** Search Box */
 fileprivate struct SearchBoxView: View {
   @Binding var searchString: String
-  @EnvironmentObject private var model: LocationModel
+  @Binding var viewState: ViewState
   
   var body: some View {
     HStack {
@@ -67,15 +95,20 @@ fileprivate struct SearchBoxView: View {
 }
 
 /** Search Button */
-fileprivate struct SearchButton: View {
+fileprivate struct SearchButtonView: View {
   @Binding var searchString: String
+  @Binding var viewState: ViewState
   @EnvironmentObject private var model: LocationModel
   
   var body: some View {
     Button(action: {
       Task {
         do {
+          viewState = .loading(searchString)
           try await model.getLocations(search: searchString)
+          DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            viewState = .idle(model.locations)
+          }
         } catch {
           print(error.localizedDescription)
         }

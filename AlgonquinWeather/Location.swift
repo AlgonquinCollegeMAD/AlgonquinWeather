@@ -1,4 +1,4 @@
-struct Location {
+struct Location: Decodable, Hashable {
     let name: String
     let localNames: [String: String]?
     let lat: Double

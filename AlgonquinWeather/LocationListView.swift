@@ -1,40 +1,55 @@
 import SwiftUI
 
 struct LocationListView: View {
-  @StateObject var model: LocationListViewModel = LocationListViewModel()
+  @State var searchString = String()
+  @EnvironmentObject private var model: Model
   
   var body: some View {
     NavigationStack {
       VStack {
         HStack {
-          SearchBoxView(model: model)
-          SearchButton(model: model)
+          SearchBoxView(searchString: $searchString)
+          SearchButton(searchString: $searchString)
         }
         .padding()
-        Spacer()
+        LocationsView(searchString: $searchString)
+        
       }
       .navigationTitle("Weather")
     }
   }
 }
 
+/** Locations List */
+fileprivate struct LocationsView: View {
+  @Binding var searchString: String
+  @EnvironmentObject private var model: Model
+  
+  var body: some View {
+    List(model.locations, id:\.self) { location in
+      Text( "\(location.name), \(location.state ?? ""), \(location.country)")
+    }
+  }
+}
+
 /** Search Box */
 fileprivate struct SearchBoxView: View {
-  @ObservedObject var model: LocationListViewModel
-  
+  @Binding var searchString: String
+  @EnvironmentObject private var model: Model
+
   var body: some View {
     HStack {
       Image(systemName: "magnifyingglass")
         .foregroundColor(.gray)
       
-      TextField("Search", text: $model.searchString)
+      TextField("Search", text: $searchString)
         .textFieldStyle(PlainTextFieldStyle())
         .font(.system(size: 14, weight: Font.Weight.regular , design: .rounded))
         .foregroundColor(.gray)
       
-      if !model.searchString.isEmpty {
+      if !searchString.isEmpty {
         Button(action: {
-          model.clearSearch()
+          searchString = String()
         }) {
           Image(systemName: "xmark.circle.fill")
             .foregroundColor(.gray)
@@ -52,11 +67,12 @@ fileprivate struct SearchBoxView: View {
 
 /** Search Button */
 fileprivate struct SearchButton: View {
-  @ObservedObject var model: LocationListViewModel
-  
+  @Binding var searchString: String
+  @EnvironmentObject private var model: Model
+
   var body: some View {
     Button(action: {
-      model.search()
+      model.getLocations(search: searchString)
     }, label: {
       Image(systemName: "location.magnifyingglass")
     })
@@ -72,12 +88,4 @@ fileprivate struct SearchButton: View {
 
 #Preview {
   LocationListView()
-}
-
-#Preview {
-  SearchButton(model: .init())
-}
-
-#Preview {
-  SearchBoxView(model: .init())
 }

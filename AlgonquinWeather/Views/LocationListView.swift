@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LocationListView: View {
   @State var searchString = String()
-  @EnvironmentObject private var model: Model
+  @EnvironmentObject private var model: LocationModel
   
   var body: some View {
     NavigationStack {
@@ -23,20 +23,21 @@ struct LocationListView: View {
 /** Locations List */
 fileprivate struct LocationsView: View {
   @Binding var searchString: String
-  @EnvironmentObject private var model: Model
+  @EnvironmentObject private var model: LocationModel
   
   var body: some View {
     List(model.locations, id:\.self) { location in
       Text( "\(location.name), \(location.state ?? ""), \(location.country)")
     }
+    .listStyle(.plain)
   }
 }
 
 /** Search Box */
 fileprivate struct SearchBoxView: View {
   @Binding var searchString: String
-  @EnvironmentObject private var model: Model
-
+  @EnvironmentObject private var model: LocationModel
+  
   var body: some View {
     HStack {
       Image(systemName: "magnifyingglass")
@@ -45,7 +46,7 @@ fileprivate struct SearchBoxView: View {
       TextField("Search", text: $searchString)
         .textFieldStyle(PlainTextFieldStyle())
         .font(.system(size: 14, weight: Font.Weight.regular , design: .rounded))
-        .foregroundColor(.gray)
+        .foregroundColor(.primary)
       
       if !searchString.isEmpty {
         Button(action: {
@@ -68,11 +69,17 @@ fileprivate struct SearchBoxView: View {
 /** Search Button */
 fileprivate struct SearchButton: View {
   @Binding var searchString: String
-  @EnvironmentObject private var model: Model
-
+  @EnvironmentObject private var model: LocationModel
+  
   var body: some View {
     Button(action: {
-      model.getLocations(search: searchString)
+      Task {
+        do {
+          try await model.getLocations(search: searchString)
+        } catch {
+          print(error.localizedDescription)
+        }
+      }
     }, label: {
       Image(systemName: "location.magnifyingglass")
     })
@@ -84,8 +91,4 @@ fileprivate struct SearchButton: View {
         .foregroundStyle(.blue)
     )
   }
-}
-
-#Preview {
-  LocationListView()
 }

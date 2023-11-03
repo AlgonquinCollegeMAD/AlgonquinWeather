@@ -3,12 +3,12 @@ import SwiftUI
 @main
 struct AlgonquinWeatherApp: App {
 
-  private var locationAPIService = LocationAPIService()
+  private var locationAPIService = LocationService()
   
   var body: some Scene {
     WindowGroup {
       LocationListView()
-        .environmentObject(Model(locationAPIService: locationAPIService))
+        .environmentObject(LocationModel(locationAPIService: locationAPIService))
     }
   }
 }

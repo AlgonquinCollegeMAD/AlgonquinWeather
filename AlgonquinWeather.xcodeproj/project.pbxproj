@@ -14,6 +14,8 @@
 		10C69CD62AF4393200A54479 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CD52AF4393200A54479 /* LocationModel.swift */; };
 		10C69CDC2AF4685F00A54479 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CDB2AF4685F00A54479 /* Location.swift */; };
 		10C69CDE2AF46A1F00A54479 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CDD2AF46A1E00A54479 /* LocationService.swift */; };
+		10C69CE62AF54DCD00A54479 /* current-forecast-request.sh in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CE42AF54DCC00A54479 /* current-forecast-request.sh */; };
+		10C69CE72AF54DCD00A54479 /* current-forecast-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CE52AF54DCC00A54479 /* current-forecast-response.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		10C69CDB2AF4685F00A54479 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		10C69CDD2AF46A1E00A54479 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		10C69CDF2AF48B0300A54479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		10C69CE42AF54DCC00A54479 /* current-forecast-request.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "current-forecast-request.sh"; sourceTree = "<group>"; };
+		10C69CE52AF54DCC00A54479 /* current-forecast-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "current-forecast-response.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 				10C69CE12AF48D9F00A54479 /* Models */,
 				10C69CE22AF48E0900A54479 /* Aggregate Root Models */,
 				10C69CE32AF48E6600A54479 /* Services */,
+				10C69CE82AF54DE400A54479 /* Resources */,
 				10C69CCA2AF433CE00A54479 /* Assets.xcassets */,
 				10C69CDF2AF48B0300A54479 /* Info.plist */,
 				10C69CCC2AF433CE00A54479 /* AlgonquinWeather.entitlements */,
@@ -110,6 +115,15 @@
 				10C69CDD2AF46A1E00A54479 /* LocationService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		10C69CE82AF54DE400A54479 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				10C69CE42AF54DCC00A54479 /* current-forecast-request.sh */,
+				10C69CE52AF54DCC00A54479 /* current-forecast-response.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +184,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10C69CE62AF54DCD00A54479 /* current-forecast-request.sh in Resources */,
+				10C69CE72AF54DCD00A54479 /* current-forecast-response.json in Resources */,
 				10C69CCF2AF433CE00A54479 /* Preview Assets.xcassets in Resources */,
 				10C69CCB2AF433CE00A54479 /* Assets.xcassets in Resources */,
 			);

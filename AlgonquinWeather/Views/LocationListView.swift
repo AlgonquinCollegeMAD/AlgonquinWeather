@@ -65,6 +65,7 @@ fileprivate struct SearchView: View {
 fileprivate struct SearchBoxView: View {
   @Binding var searchString: String
   @Binding var viewState: ViewState
+  @EnvironmentObject private var model: LocationModel
   
   var body: some View {
     HStack {
@@ -75,6 +76,17 @@ fileprivate struct SearchBoxView: View {
         .textFieldStyle(PlainTextFieldStyle())
         .font(.system(size: 14, weight: Font.Weight.regular , design: .rounded))
         .foregroundColor(.primary)
+        .onSubmit {
+          Task {
+            do {
+              viewState = .loading(searchString)
+              try await model.getLocations(search: searchString)
+              viewState = .idle(model.locations)
+            } catch {
+              print(error.localizedDescription)
+            }
+          }
+        }
       
       if !searchString.isEmpty {
         Button(action: {
@@ -106,9 +118,7 @@ fileprivate struct SearchButtonView: View {
         do {
           viewState = .loading(searchString)
           try await model.getLocations(search: searchString)
-          DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            viewState = .idle(model.locations)
-          }
+          viewState = .idle(model.locations)
         } catch {
           print(error.localizedDescription)
         }

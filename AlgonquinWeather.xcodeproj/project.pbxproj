@@ -16,6 +16,7 @@
 		10C69CDE2AF46A1F00A54479 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CDD2AF46A1E00A54479 /* LocationService.swift */; };
 		10C69CE62AF54DCD00A54479 /* current-forecast-request.sh in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CE42AF54DCC00A54479 /* current-forecast-request.sh */; };
 		10C69CE72AF54DCD00A54479 /* current-forecast-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CE52AF54DCC00A54479 /* current-forecast-response.json */; };
+		10F812682AF94E1500EB27A0 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F812672AF94E1500EB27A0 /* ForecastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		10C69CDF2AF48B0300A54479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		10C69CE42AF54DCC00A54479 /* current-forecast-request.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "current-forecast-request.sh"; sourceTree = "<group>"; };
 		10C69CE52AF54DCC00A54479 /* current-forecast-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "current-forecast-response.json"; sourceTree = "<group>"; };
+		10F812672AF94E1500EB27A0 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				10C69CC82AF433CD00A54479 /* SearchLocationView.swift */,
+				10F812672AF94E1500EB27A0 /* ForecastView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				10C69CC72AF433CD00A54479 /* AlgonquinWeatherApp.swift in Sources */,
 				10C69CD62AF4393200A54479 /* LocationModel.swift in Sources */,
 				10C69CDE2AF46A1F00A54479 /* LocationService.swift in Sources */,
+				10F812682AF94E1500EB27A0 /* ForecastView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

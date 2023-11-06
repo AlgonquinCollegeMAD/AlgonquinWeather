@@ -6,7 +6,7 @@ fileprivate enum ViewState {
   case idle([Location])
 }
 
-struct LocationListView: View {
+struct SearchLocationView: View {
   @State fileprivate var viewState: ViewState = .empty
   
   var body: some View {
@@ -31,7 +31,7 @@ struct LocationListView: View {
           LocationsView(locations: array)
         }
       }
-      .navigationTitle("Weather")
+      .navigationTitle("Search")
     }
   }
 }

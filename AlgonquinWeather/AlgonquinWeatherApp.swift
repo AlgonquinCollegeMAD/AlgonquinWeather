@@ -7,7 +7,7 @@ struct AlgonquinWeatherApp: App {
   
   var body: some Scene {
     WindowGroup {
-      LocationListView()
+      SearchLocationView()
         .environmentObject(LocationModel(locationAPIService: locationAPIService))
     }
   }

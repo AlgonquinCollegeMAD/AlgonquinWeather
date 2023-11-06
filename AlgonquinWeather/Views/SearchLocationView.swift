@@ -16,10 +16,12 @@ struct SearchLocationView: View {
           .padding()
         
         switch viewState {
+          
         case .loading(let string):
           Spacer()
           ProgressView("Searching for \(string)")
           Spacer()
+          
         case .empty:
           ContentUnavailableView {
             Text("No locations selected")
@@ -38,15 +40,23 @@ struct SearchLocationView: View {
 
 /** Locations List */
 fileprivate struct LocationsView: View {
+  @State private var selectedLocation: Location?
   var locations: [Location]
   
   var body: some View {
     List(locations, id:\.self) { location in
       Text( "\(location.name), \(location.state ?? ""), \(location.country)")
+        .onTapGesture {
+          self.selectedLocation = location
+        }
     }
     .listStyle(.plain)
+    .sheet(item: $selectedLocation) { location in
+      ForecastView(location: location)
+    }
   }
 }
+
 
 /** Search View */
 fileprivate struct SearchView: View {

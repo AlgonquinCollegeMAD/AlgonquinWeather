@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 @main
 struct AlgonquinWeatherApp: App {
@@ -10,5 +11,11 @@ struct AlgonquinWeatherApp: App {
       SearchLocationView()
         .environmentObject(LocationModel(locationAPIService: locationAPIService))
     }
+    .modelContainer(
+      for: [
+        LocationItem.self,
+        LocationCollection.self
+      ]
+    )
   }
 }

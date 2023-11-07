@@ -36,7 +36,7 @@ struct SearchLocationView: View {
       }
       .navigationTitle("Search")
       .toolbar {
-        ToolbarItem() {
+        ToolbarItem(placement: .cancellationAction) {
           Button(action: {
             dismiss()
           }, label: {

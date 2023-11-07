@@ -3,6 +3,7 @@ import SwiftUI
 struct ForecastView: View {
   var location: Location
   @Environment(\.modelContext) private var context
+  @Environment(\.dismiss) private var fecha
   
   var body: some View {
     NavigationStack {
@@ -13,15 +14,22 @@ struct ForecastView: View {
         Text( "\(location.country)")
       }
       .toolbar {
-        Button("Add") {
-          let newLocationItem = LocationItem(location: location)
-          context.insert(newLocationItem)
-          
-          do {
-            try context.save()
+        ToolbarItem(placement: .cancellationAction) {
+          Button("Cancel") {
+            fecha()
           }
-          catch {
-            print("Error saving new location item: \(error.localizedDescription)")
+        }
+        ToolbarItem(placement: .confirmationAction) {
+          Button("Add") {
+            let newLocationItem = LocationItem(location: location)
+            context.insert(newLocationItem)
+            
+            do {
+              try context.save()
+            }
+            catch {
+              print("Error saving new location item: \(error.localizedDescription)")
+            }
           }
         }
       }

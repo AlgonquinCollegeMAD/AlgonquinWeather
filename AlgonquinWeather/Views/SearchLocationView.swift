@@ -8,6 +8,7 @@ fileprivate enum ViewState {
 
 struct SearchLocationView: View {
   @State fileprivate var viewState: ViewState = .empty
+  @Environment(\.dismiss) var dismiss
   
   var body: some View {
     NavigationStack {
@@ -34,6 +35,15 @@ struct SearchLocationView: View {
         }
       }
       .navigationTitle("Search")
+      .toolbar {
+        ToolbarItem() {
+          Button(action: {
+            dismiss()
+          }, label: {
+            Text("Cancel")
+          })
+        }
+      }
     }
   }
 }
@@ -50,7 +60,6 @@ fileprivate struct LocationsView: View {
           self.selectedLocation = location
         }
     }
-    
     .listStyle(.plain)
     .sheet(item: $selectedLocation) { location in
       ForecastView(location: location)

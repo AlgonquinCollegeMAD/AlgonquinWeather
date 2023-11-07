@@ -8,7 +8,7 @@ struct LocalionColletionView: View {
   var body: some View {
     NavigationView {
       List(items, id: \.id) { item in
-        Text(item.name)
+        Text( "\(item.name), \(item.state ?? ""), \(item.country)")
       }
       .navigationTitle("Weather")
       .navigationBarItems(trailing: Button(action: {

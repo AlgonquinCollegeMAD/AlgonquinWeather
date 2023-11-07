@@ -4,7 +4,7 @@ enum WeatherError: Error {
   case invalidURL
 }
 
-class LocationService: ObservableObject, Observable {
+class OpenWeatherAPIService: ObservableObject {
   @Published private(set) var locations: [Location] = []
   
   func getLocations(search searchString: String) async throws -> [Location] {

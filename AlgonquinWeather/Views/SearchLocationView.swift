@@ -50,6 +50,7 @@ fileprivate struct LocationsView: View {
           self.selectedLocation = location
         }
     }
+    
     .listStyle(.plain)
     .sheet(item: $selectedLocation) { location in
       ForecastView(location: location)

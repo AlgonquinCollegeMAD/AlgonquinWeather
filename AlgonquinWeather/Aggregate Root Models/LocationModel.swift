@@ -2,9 +2,9 @@ import SwiftUI
 
 class LocationModel: ObservableObject {
   @Published private(set) var locations: [Location] = []
-  let locationAPIService: LocationService
+  let locationAPIService: OpenWeatherAPIService
   
-  init(locationAPIService: LocationService) {
+  init(locationAPIService: OpenWeatherAPIService) {
     self.locationAPIService = locationAPIService
   }
   

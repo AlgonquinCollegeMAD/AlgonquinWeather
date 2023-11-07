@@ -20,5 +20,84 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E3C8C8F-FF35-431F-9BA8-B323BEA6C934"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlgonquinWeather/Services/OpenWeatherAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "decodeCurrentWeatherData(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E3C8C8F-FF35-431F-9BA8-B323BEA6C934 - 19522933f1e182a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlgonquinWeather.OpenWeatherAPIService.decodeCurrentWeatherData(from: Foundation.Data) -&gt; Swift.Optional&lt;AlgonquinWeather.CurrentWeatherModel&gt;"
+                  moduleName = "AlgonquinWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimircezar/spaces/algonquin/MAD9137/AlgonquinWeather/AlgonquinWeather/Services/OpenWeatherAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+               <Location
+                  uuid = "3E3C8C8F-FF35-431F-9BA8-B323BEA6C934 - 19522933f1e182a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlgonquinWeather.OpenWeatherAPIService.decodeCurrentWeatherData(from: Foundation.Data) -&gt; Swift.Optional&lt;AlgonquinWeather.CurrentWeatherModel&gt;"
+                  moduleName = "AlgonquinWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimircezar/spaces/algonquin/MAD9137/AlgonquinWeather/AlgonquinWeather/Services/OpenWeatherAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "1204">
+               </Location>
+               <Location
+                  uuid = "3E3C8C8F-FF35-431F-9BA8-B323BEA6C934 - 19522933f1e182a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AlgonquinWeather.OpenWeatherAPIService.decodeCurrentWeatherData(from: Foundation.Data) -&gt; Swift.Optional&lt;AlgonquinWeather.CurrentWeatherModel&gt;"
+                  moduleName = "AlgonquinWeather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimircezar/spaces/algonquin/MAD9137/AlgonquinWeather/AlgonquinWeather/Services/OpenWeatherAPIService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "1256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56F77F0A-64B5-45E3-964C-CAC6B90765A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AlgonquinWeather/Services/OpenWeatherAPIService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "decodeCurrentWeatherData(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

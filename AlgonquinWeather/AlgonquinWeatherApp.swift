@@ -8,12 +8,12 @@ struct AlgonquinWeatherApp: App {
   
   var body: some Scene {
     WindowGroup {
-      LocalionColletionView()
-        .environmentObject(LocationModel(apiService: apiService))
+      LocationWeatherListView()
+        .environmentObject(GeocodingModel(apiService: apiService))
     }
     .modelContainer(
       for: [
-        LocationItem.self,
+        Location.self,
         LocationCollection.self
       ]
     )

@@ -4,10 +4,9 @@ enum WeatherError: Error {
   case invalidURL
 }
 
-class OpenWeatherAPIService: ObservableObject {
-  @Published private(set) var locations: [Location] = []
+class OpenWeatherAPIService {
   
-  func getLocations(search searchString: String) async throws -> [Location] {
+  func getLocations(search searchString: String) async throws -> [LocationModel] {
     let urlString = "http://api.openweathermap.org/geo/1.0/direct?q=\(searchString)&limit=20&appid=df766d0efdfecd9cf618f52dc2c16a02"
     if let url = URL(string: urlString) {
       let (data, _) = try await URLSession.shared.data(from: url)
@@ -17,20 +16,20 @@ class OpenWeatherAPIService: ObservableObject {
     }
   }
   
-  func getForecast(location: Location) async throws -> Forecast? {
-    let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(location.lat)lon=\(location.lon)&dt=1200&appid=df766d0efdfecd9cf618f52dc2c16a02"
+  func getCurrentWeather(location: LocationModel) async throws -> CurrentWeatherModel? {
+    let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(location.lat)&lon=\(location.lon)&units=metric&&dt=1200&appid=df766d0efdfecd9cf618f52dc2c16a02"
     if let url = URL(string: urlString) {
       let (data, _) = try await URLSession.shared.data(from: url)
-      return decodeForecastData(from: data)
+      return decodeCurrentWeatherData(from: data)
     } else {
       throw WeatherError.invalidURL
     }
   }
   /** Private functions **/
-  private func decodeForecastData(from json: Data) -> Forecast? {
+  private func decodeCurrentWeatherData(from json: Data) -> CurrentWeatherModel? {
     do {
       let decoder = JSONDecoder()
-      let data = try decoder.decode(Forecast.self, from: json)
+      let data = try decoder.decode(CurrentWeatherModel.self, from: json)
       return data
     } catch {
       print("Error decoding weather data: \(error)")
@@ -38,10 +37,10 @@ class OpenWeatherAPIService: ObservableObject {
     }
   }
   
-  private func decodeLocationData(from json: Data) -> [Location] {
+  private func decodeLocationData(from json: Data) -> [LocationModel] {
     do {
       let decoder = JSONDecoder()
-      let data = try decoder.decode([Location].self, from: json)
+      let data = try decoder.decode([LocationModel].self, from: json)
       return data
     } catch {
       print("Error decoding weather data: \(error)")

@@ -1,9 +1,6 @@
 import Foundation
 
-struct Location: Decodable, Hashable, Identifiable {
-  var id: Int {
-    UUID().hashValue
-  }
+struct LocationModel: Codable, Hashable {
   let name: String
   let localNames: [String: String]?
   let lat: Double

@@ -3,7 +3,7 @@ import SwiftUI
 fileprivate enum ViewState {
   case loading(String)
   case empty
-  case idle([Location])
+  case idle([LocationModel])
 }
 
 struct SearchLocationView: View {
@@ -31,17 +31,15 @@ struct SearchLocationView: View {
           }
           
         case .idle(let array):
-          LocationsView(locations: array)
+          LocationsView(locationModels: array)
         }
       }
       .navigationTitle("Search")
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
-          Button(action: {
+          Button("Cancel") {
             dismiss()
-          }, label: {
-            Text("Cancel")
-          })
+          }
         }
       }
     }
@@ -50,20 +48,26 @@ struct SearchLocationView: View {
 
 /** Locations List */
 fileprivate struct LocationsView: View {
-  @State private var selectedLocation: Location?
-  var locations: [Location]
+  @Environment(\.modelContext) private var context
+  @Environment(\.dismiss) private var dismiss
+  var locationModels: [LocationModel]
   
   var body: some View {
-    List(locations, id:\.self) { location in
-      Text( "\(location.name), \(location.state ?? ""), \(location.country)")
+    List(locationModels, id:\.self) { locationModel in
+      Text( "\(locationModel.name), \(locationModel.state ?? ""), \(locationModel.country)")
         .onTapGesture {
-          self.selectedLocation = location
+          let newLocation = Location(model: locationModel)
+          context.insert(newLocation)
+          do {
+            try context.save()
+            dismiss()
+          }
+          catch {
+            print("Error saving new location item: \(error.localizedDescription)")
+          }
         }
     }
     .listStyle(.plain)
-    .sheet(item: $selectedLocation) { location in
-      ForecastView(location: location)
-    }
   }
 }
 
@@ -85,7 +89,7 @@ fileprivate struct SearchView: View {
 fileprivate struct SearchBoxView: View {
   @Binding var searchString: String
   @Binding var viewState: ViewState
-  @EnvironmentObject private var model: LocationModel
+  @EnvironmentObject private var model: GeocodingModel
   
   var body: some View {
     HStack {
@@ -130,7 +134,7 @@ fileprivate struct SearchBoxView: View {
 fileprivate struct SearchButtonView: View {
   @Binding var searchString: String
   @Binding var viewState: ViewState
-  @EnvironmentObject private var model: LocationModel
+  @EnvironmentObject private var model: GeocodingModel
   
   var body: some View {
     Button(action: {

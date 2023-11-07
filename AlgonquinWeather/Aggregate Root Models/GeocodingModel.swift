@@ -1,7 +1,7 @@
 import SwiftUI
 
-class LocationModel: ObservableObject {
-  @Published private(set) var locations: [Location] = []
+class GeocodingModel: ObservableObject {
+  @Published private(set) var locations: [LocationModel] = []
   let apiService: OpenWeatherAPIService
   
   init(apiService: OpenWeatherAPIService) {

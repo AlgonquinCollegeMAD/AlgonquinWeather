@@ -3,7 +3,7 @@ import SwiftData
 
 struct CurrentWeatherRowView: View {
   var location: Location
-  @StateObject var weatherModel: WeatherModel = WeatherModel(apiService: OpenWeatherAPIService())
+  @StateObject var weatherModel: WeatherModel = WeatherModel(weatherService: OpenWeather.WeatherService())
   
   var body: some View {
     if let currentWeather = weatherModel.currentWeather {

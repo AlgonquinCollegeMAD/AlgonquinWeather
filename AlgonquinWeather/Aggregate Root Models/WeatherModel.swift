@@ -2,15 +2,15 @@ import SwiftUI
 
 class WeatherModel: ObservableObject {
   @Published private(set) var currentWeather: CurrentWeatherModel?
-  let apiService: OpenWeatherAPIService
+  let weatherService: OpenWeather.WeatherService
   
-  init(apiService: OpenWeatherAPIService) {
-    self.apiService = apiService
+  init(weatherService: OpenWeather.WeatherService) {
+    self.weatherService = weatherService
   }
   
   func getCurrentWeather(location: Location) async throws {
     do {
-      let currentWeather = try await apiService.getCurrentWeather(location: location.model())
+      let currentWeather = try await weatherService.getCurrentWeather(location: location.model())
       DispatchQueue.main.async {
         self.currentWeather = currentWeather
       }

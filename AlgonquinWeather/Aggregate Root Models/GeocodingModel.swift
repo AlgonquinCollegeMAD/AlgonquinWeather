@@ -2,15 +2,15 @@ import SwiftUI
 
 class GeocodingModel: ObservableObject {
   @Published private(set) var locations: [LocationModel] = []
-  let apiService: OpenWeatherAPIService
+  let geocoder: OpenWeather.GeocodingProvider
   
-  init(apiService: OpenWeatherAPIService) {
-    self.apiService = apiService
+  init(geocoder: OpenWeather.GeocodingProvider) {
+    self.geocoder = geocoder
   }
   
   func getLocations(search searchString: String) async throws {
     do {
-      let newLocations = try await apiService.getLocations(search: searchString)
+      let newLocations = try await geocoder.getLocations(search: searchString)
       DispatchQueue.main.async {
         self.locations = newLocations
       }

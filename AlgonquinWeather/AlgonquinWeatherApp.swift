@@ -4,12 +4,12 @@ import SwiftData
 @main
 struct AlgonquinWeatherApp: App {
 
-  private var apiService = OpenWeatherAPIService()
+  private var geocodingService = OpenWeather.GeocodingProvider()
   
   var body: some Scene {
     WindowGroup {
       LocationWeatherListView()
-        .environmentObject(GeocodingModel(apiService: apiService))
+        .environmentObject(GeocodingModel(geocoder: geocodingService))
     }
     .modelContainer(
       for: [

@@ -18,11 +18,11 @@
 		10C69CD62AF4393200A54479 /* GeocodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CD52AF4393200A54479 /* GeocodingModel.swift */; };
 		10C69CDC2AF4685F00A54479 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CDB2AF4685F00A54479 /* Location.swift */; };
 		10C69CDE2AF46A1F00A54479 /* GeocodingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CDD2AF46A1E00A54479 /* GeocodingProvider.swift */; };
-		10C69CE62AF54DCD00A54479 /* current-forecast-request.sh in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CE42AF54DCC00A54479 /* current-forecast-request.sh */; };
-		10C69CE72AF54DCD00A54479 /* current-forecast-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CE52AF54DCC00A54479 /* current-forecast-response.json */; };
+		10C69CE62AF54DCD00A54479 /* open-weather-current-req-rsp.sh in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CE42AF54DCC00A54479 /* open-weather-current-req-rsp.sh */; };
 		10CE50512AFD874200267920 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE50502AFD874200267920 /* WeatherService.swift */; };
 		10CE50542AFD876F00267920 /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE50532AFD876F00267920 /* OpenWeather.swift */; };
 		10CE50562AFD87A700267920 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE50552AFD87A700267920 /* ErrorEnums.swift */; };
+		10CE50582AFDB42E00267920 /* open-weather-forecast-req-rsp.sh in Resources */ = {isa = PBXBuildFile; fileRef = 10CE50572AFDB42E00267920 /* open-weather-forecast-req-rsp.sh */; };
 		10F8126A2AF97BA500EB27A0 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F812692AF97BA500EB27A0 /* LocationData.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,11 +41,11 @@
 		10C69CDB2AF4685F00A54479 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		10C69CDD2AF46A1E00A54479 /* GeocodingProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodingProvider.swift; sourceTree = "<group>"; };
 		10C69CDF2AF48B0300A54479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		10C69CE42AF54DCC00A54479 /* current-forecast-request.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "current-forecast-request.sh"; sourceTree = "<group>"; };
-		10C69CE52AF54DCC00A54479 /* current-forecast-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "current-forecast-response.json"; sourceTree = "<group>"; };
+		10C69CE42AF54DCC00A54479 /* open-weather-current-req-rsp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "open-weather-current-req-rsp.sh"; sourceTree = "<group>"; };
 		10CE50502AFD874200267920 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		10CE50532AFD876F00267920 /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
 		10CE50552AFD87A700267920 /* ErrorEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnums.swift; sourceTree = "<group>"; };
+		10CE50572AFDB42E00267920 /* open-weather-forecast-req-rsp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "open-weather-forecast-req-rsp.sh"; sourceTree = "<group>"; };
 		10F812692AF97BA500EB27A0 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,8 +148,8 @@
 		10C69CE82AF54DE400A54479 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				10C69CE42AF54DCC00A54479 /* current-forecast-request.sh */,
-				10C69CE52AF54DCC00A54479 /* current-forecast-response.json */,
+				10C69CE42AF54DCC00A54479 /* open-weather-current-req-rsp.sh */,
+				10CE50572AFDB42E00267920 /* open-weather-forecast-req-rsp.sh */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -224,9 +224,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10C69CE62AF54DCD00A54479 /* current-forecast-request.sh in Resources */,
-				10C69CE72AF54DCD00A54479 /* current-forecast-response.json in Resources */,
+				10C69CE62AF54DCD00A54479 /* open-weather-current-req-rsp.sh in Resources */,
 				10C69CCF2AF433CE00A54479 /* Preview Assets.xcassets in Resources */,
+				10CE50582AFDB42E00267920 /* open-weather-forecast-req-rsp.sh in Resources */,
 				10C69CCB2AF433CE00A54479 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

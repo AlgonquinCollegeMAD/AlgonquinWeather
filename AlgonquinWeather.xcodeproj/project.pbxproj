@@ -124,8 +124,6 @@
 		10C69CE12AF48D9F00A54479 /* Codable Models */ = {
 			isa = PBXGroup;
 			children = (
-				10C69CDB2AF4685F00A54479 /* LocationModel.swift */,
-				10B45DD02AFAC6930048C525 /* CurrentWeatherModel.swift */,
 			);
 			path = "Codable Models";
 			sourceTree = "<group>";
@@ -160,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				10CE50532AFD876F00267920 /* OpenWeather.swift */,
+				10C69CDB2AF4685F00A54479 /* LocationModel.swift */,
+				10B45DD02AFAC6930048C525 /* CurrentWeatherModel.swift */,
 				10C69CDD2AF46A1E00A54479 /* GeocodingProvider.swift */,
 				10CE50502AFD874200267920 /* WeatherService.swift */,
 			);

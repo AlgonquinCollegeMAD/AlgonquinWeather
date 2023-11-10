@@ -1,7 +1,7 @@
 import SwiftUI
 
 class WeatherModel: ObservableObject {
-  @Published private(set) var currentWeather: CurrentWeatherModel?
+  @Published private(set) var currentWeather: OpenWeather.CurrentWeatherModel?
   let weatherService: OpenWeather.WeatherService
   
   init(weatherService: OpenWeather.WeatherService) {

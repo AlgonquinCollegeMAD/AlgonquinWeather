@@ -3,7 +3,7 @@ import SwiftUI
 fileprivate enum ViewState {
   case loading(String)
   case empty
-  case idle([LocationModel])
+  case idle([OpenWeather.LocationModel])
 }
 
 struct SearchLocationView: View {
@@ -50,7 +50,7 @@ struct SearchLocationView: View {
 fileprivate struct LocationsView: View {
   @Environment(\.modelContext) private var context
   @Environment(\.dismiss) private var dismiss
-  var locationModels: [LocationModel]
+  var locationModels: [OpenWeather.LocationModel]
   
   var body: some View {
     List(locationModels, id:\.self) { locationModel in

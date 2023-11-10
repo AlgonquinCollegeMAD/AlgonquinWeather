@@ -11,7 +11,7 @@ class Location {
   let state: String?
   var isFavorite: Bool
   
-  init(model: LocationModel) {
+  init(model: OpenWeather.LocationModel) {
     self.isFavorite = false
     self.name = model.name
     self.localNames = model.localNames
@@ -21,8 +21,8 @@ class Location {
     self.state = model.state
   }
   
-  func model() -> LocationModel {
-    LocationModel(
+  func model() -> OpenWeather.LocationModel {
+    OpenWeather.LocationModel(
       name: self.name,
       localNames: self.localNames,
       lat: self.lat,

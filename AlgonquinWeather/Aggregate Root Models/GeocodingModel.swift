@@ -1,7 +1,7 @@
 import SwiftUI
 
 class GeocodingModel: ObservableObject {
-  @Published private(set) var locations: [OpenWeather.Location] = []
+  @Published private(set) var locations: [LocationData] = []
   let geocoder: OpenWeather.GeocodingProvider
   
   init(geocoder: OpenWeather.GeocodingProvider) {
@@ -10,9 +10,11 @@ class GeocodingModel: ObservableObject {
   
   func getLocations(search searchString: String) async throws {
     do {
-      let newLocations = try await geocoder.getLocations(search: searchString)
+      let locations = try await geocoder.getLocations(search: searchString)
       DispatchQueue.main.async {
-        self.locations = newLocations
+        self.locations = locations.map({ location in
+          LocationData(model: location)
+        })
       }
     } catch {
       // Handle the error here

@@ -20,26 +20,4 @@ class LocationData {
     self.country = model.country
     self.state = model.state
   }
-  
-  func model() -> OpenWeather.Location {
-    OpenWeather.Location(
-      name: self.name,
-      localNames: self.localNames,
-      lat: self.lat,
-      lon: self.lon,
-      country: self.country,
-      state: self.state
-    )
-  }
-}
-
-@Model
-class LocationCollection {
-  var id: Int
-  @Relationship(deleteRule: .cascade) var items: [LocationData] = []
-  
-  init(id: Int, items: [LocationData]) {
-    self.id = id
-    self.items = items
-  }
 }

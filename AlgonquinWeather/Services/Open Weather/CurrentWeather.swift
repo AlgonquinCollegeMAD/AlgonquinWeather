@@ -1,5 +1,20 @@
 extension OpenWeather {
   struct CurrentWeather: Codable {
+    let coord: Coord
+    let weather: [Weather]
+    let base: String
+    let main: Main
+    let visibility: Int
+    let wind: Wind
+    let clouds: Clouds
+    let dt: Int
+    let sys: Sys
+    let timezone: Int
+    let id: Int
+    let name: String
+    let cod: Int
+    
+    
     struct Coord: Codable {
       let lon: Double
       let lat: Double
@@ -38,19 +53,6 @@ extension OpenWeather {
       let sunrise: Int
       let sunset: Int
     }
-    
-    let coord: Coord
-    let weather: [Weather]
-    let base: String
-    let main: Main
-    let visibility: Int
-    let wind: Wind
-    let clouds: Clouds
-    let dt: Int
-    let sys: Sys
-    let timezone: Int
-    let id: Int
-    let name: String
-    let cod: Int
+  
   }
 }

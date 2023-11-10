@@ -78,5 +78,4 @@ extension OpenWeather {
     let lat: Double
     let lon: Double
   }
-  
 }

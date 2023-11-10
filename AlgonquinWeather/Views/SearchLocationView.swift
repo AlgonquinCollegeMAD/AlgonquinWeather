@@ -3,7 +3,7 @@ import SwiftUI
 fileprivate enum ViewState {
   case loading(String)
   case empty
-  case idle([OpenWeather.Location])
+  case idle([LocationData])
 }
 
 struct SearchLocationView: View {
@@ -31,7 +31,7 @@ struct SearchLocationView: View {
           }
           
         case .idle(let array):
-          LocationsView(locationModels: array)
+          LocationsView(locations: array)
         }
       }
       .navigationTitle("Search")
@@ -46,18 +46,17 @@ struct SearchLocationView: View {
   }
 }
 
-/** Locations List */
+// Locations List
 fileprivate struct LocationsView: View {
   @Environment(\.modelContext) private var context
   @Environment(\.dismiss) private var dismiss
-  var locationModels: [OpenWeather.Location]
+  var locations: [LocationData]
   
   var body: some View {
-    List(locationModels, id:\.self) { locationModel in
-      Text( "\(locationModel.name), \(locationModel.state ?? ""), \(locationModel.country)")
+    List(locations, id:\.self) { location in
+      Text( "\(location.name), \(location.state ?? ""), \(location.country)")
         .onTapGesture {
-          let newLocation = LocationData(model: locationModel)
-          context.insert(newLocation)
+          context.insert(location)
           do {
             try context.save()
             dismiss()
@@ -72,7 +71,7 @@ fileprivate struct LocationsView: View {
 }
 
 
-/** Search View */
+// Search View
 fileprivate struct SearchView: View {
   @State var searchString = String()
   @Binding var viewState: ViewState
@@ -85,7 +84,7 @@ fileprivate struct SearchView: View {
   }
 }
 
-/** Search Box */
+// Search Box
 fileprivate struct SearchBoxView: View {
   @Binding var searchString: String
   @Binding var viewState: ViewState

@@ -1,5 +1,4 @@
 import Foundation
-
 extension OpenWeather {
   class GeocodingProvider {
     func getLocations(search searchString: String) async throws -> [OpenWeather.Location] {

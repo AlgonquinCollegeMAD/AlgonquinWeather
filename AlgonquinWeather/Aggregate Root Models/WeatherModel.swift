@@ -8,7 +8,7 @@ class WeatherModel: ObservableObject {
     self.weatherService = weatherService
   }
   
-  func getCurrentWeather(location: LocationItem) async throws {
+  func getCurrentWeather(location: LocationData) async throws {
     do {
       let currentWeather = try await weatherService.getCurrentWeather(location: location.model())
       DispatchQueue.main.async {

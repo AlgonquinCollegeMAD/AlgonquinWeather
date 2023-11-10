@@ -23,7 +23,7 @@
 		10CE50512AFD874200267920 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE50502AFD874200267920 /* WeatherService.swift */; };
 		10CE50542AFD876F00267920 /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE50532AFD876F00267920 /* OpenWeather.swift */; };
 		10CE50562AFD87A700267920 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE50552AFD87A700267920 /* ErrorEnums.swift */; };
-		10F8126A2AF97BA500EB27A0 /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F812692AF97BA500EB27A0 /* LocationItem.swift */; };
+		10F8126A2AF97BA500EB27A0 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F812692AF97BA500EB27A0 /* LocationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		10CE50502AFD874200267920 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		10CE50532AFD876F00267920 /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
 		10CE50552AFD87A700267920 /* ErrorEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnums.swift; sourceTree = "<group>"; };
-		10F812692AF97BA500EB27A0 /* LocationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationItem.swift; sourceTree = "<group>"; };
+		10F812692AF97BA500EB27A0 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		10B45DD82AFB33F30048C525 /* SwiftData Models */ = {
 			isa = PBXGroup;
 			children = (
-				10F812692AF97BA500EB27A0 /* LocationItem.swift */,
+				10F812692AF97BA500EB27A0 /* LocationData.swift */,
 			);
 			path = "SwiftData Models";
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 				10B45DCF2AFA9CF50048C525 /* LocationWeatherListView.swift in Sources */,
 				10B45DD12AFAC6930048C525 /* CurrentWeather.swift in Sources */,
 				10CE50542AFD876F00267920 /* OpenWeather.swift in Sources */,
-				10F8126A2AF97BA500EB27A0 /* LocationItem.swift in Sources */,
+				10F8126A2AF97BA500EB27A0 /* LocationData.swift in Sources */,
 				10C69CD62AF4393200A54479 /* GeocodingModel.swift in Sources */,
 				10C69CDE2AF46A1F00A54479 /* GeocodingProvider.swift in Sources */,
 				10CE50562AFD87A700267920 /* ErrorEnums.swift in Sources */,

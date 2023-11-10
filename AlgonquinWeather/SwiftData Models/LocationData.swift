@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 @Model
-class LocationItem {
+class LocationData {
   let name: String
   let localNames: [String: String]?
   let lat: Double
@@ -36,9 +36,9 @@ class LocationItem {
 @Model
 class LocationCollection {
   var id: Int
-  @Relationship(deleteRule: .cascade) var items: [LocationItem] = []
+  @Relationship(deleteRule: .cascade) var items: [LocationData] = []
   
-  init(id: Int, items: [LocationItem]) {
+  init(id: Int, items: [LocationData]) {
     self.id = id
     self.items = items
   }

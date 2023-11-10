@@ -56,7 +56,7 @@ fileprivate struct LocationsView: View {
     List(locationModels, id:\.self) { locationModel in
       Text( "\(locationModel.name), \(locationModel.state ?? ""), \(locationModel.country)")
         .onTapGesture {
-          let newLocation = LocationItem(model: locationModel)
+          let newLocation = LocationData(model: locationModel)
           context.insert(newLocation)
           do {
             try context.save()

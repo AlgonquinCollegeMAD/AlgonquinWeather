@@ -1,5 +1,4 @@
 import Foundation
-
 extension OpenWeather {
   class WeatherService {
     func getCurrentWeather(location: Location) async throws -> OpenWeather.CurrentWeather? {

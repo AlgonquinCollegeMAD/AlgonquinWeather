@@ -13,7 +13,7 @@ struct AlgonquinWeatherApp: App {
     }
     .modelContainer(
       for: [
-        LocationItem.self,
+        LocationData.self,
         LocationCollection.self
       ]
     )

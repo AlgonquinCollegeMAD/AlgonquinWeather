@@ -1,7 +1,7 @@
 import Foundation
 
 extension OpenWeather {
-  struct LocationModel: Codable, Hashable {
+  struct Location: Codable, Hashable {
     let name: String
     let localNames: [String: String]?
     let lat: Double

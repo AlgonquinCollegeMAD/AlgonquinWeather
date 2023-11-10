@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Location {
+class LocationItem {
   let name: String
   let localNames: [String: String]?
   let lat: Double
@@ -11,7 +11,7 @@ class Location {
   let state: String?
   var isFavorite: Bool
   
-  init(model: OpenWeather.LocationModel) {
+  init(model: OpenWeather.Location) {
     self.isFavorite = false
     self.name = model.name
     self.localNames = model.localNames
@@ -21,8 +21,8 @@ class Location {
     self.state = model.state
   }
   
-  func model() -> OpenWeather.LocationModel {
-    OpenWeather.LocationModel(
+  func model() -> OpenWeather.Location {
+    OpenWeather.Location(
       name: self.name,
       localNames: self.localNames,
       lat: self.lat,
@@ -36,9 +36,9 @@ class Location {
 @Model
 class LocationCollection {
   var id: Int
-  @Relationship(deleteRule: .cascade) var items: [Location] = []
+  @Relationship(deleteRule: .cascade) var items: [LocationItem] = []
   
-  init(id: Int, items: [Location]) {
+  init(id: Int, items: [LocationItem]) {
     self.id = id
     self.items = items
   }

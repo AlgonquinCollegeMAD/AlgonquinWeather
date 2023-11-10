@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct LocationWeatherListView: View {
-  @Query var locations: [Location]
+  @Query var locations: [LocationItem]
   @State private var showSearchLocationSheet = false
   
   var body: some View {

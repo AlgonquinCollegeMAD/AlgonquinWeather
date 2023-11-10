@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct CurrentWeatherRowView: View {
-  var location: Location
+  var location: LocationItem
   @StateObject var weatherModel: WeatherModel = WeatherModel(weatherService: OpenWeather.WeatherService())
   
   var body: some View {

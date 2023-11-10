@@ -3,7 +3,7 @@ import SwiftUI
 fileprivate enum ViewState {
   case loading(String)
   case empty
-  case idle([OpenWeather.LocationModel])
+  case idle([OpenWeather.Location])
 }
 
 struct SearchLocationView: View {
@@ -50,13 +50,13 @@ struct SearchLocationView: View {
 fileprivate struct LocationsView: View {
   @Environment(\.modelContext) private var context
   @Environment(\.dismiss) private var dismiss
-  var locationModels: [OpenWeather.LocationModel]
+  var locationModels: [OpenWeather.Location]
   
   var body: some View {
     List(locationModels, id:\.self) { locationModel in
       Text( "\(locationModel.name), \(locationModel.state ?? ""), \(locationModel.country)")
         .onTapGesture {
-          let newLocation = Location(model: locationModel)
+          let newLocation = LocationItem(model: locationModel)
           context.insert(newLocation)
           do {
             try context.save()

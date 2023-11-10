@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10B45DCF2AFA9CF50048C525 /* LocationWeatherListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B45DCE2AFA9CF50048C525 /* LocationWeatherListView.swift */; };
-		10B45DD12AFAC6930048C525 /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B45DD02AFAC6930048C525 /* CurrentWeatherModel.swift */; };
+		10B45DD12AFAC6930048C525 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B45DD02AFAC6930048C525 /* CurrentWeather.swift */; };
 		10B45DD32AFACF750048C525 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B45DD22AFACF750048C525 /* WeatherModel.swift */; };
 		10B45DD72AFB2ECB0048C525 /* CurrentWeatherRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B45DD62AFB2ECB0048C525 /* CurrentWeatherRowView.swift */; };
 		10C69CC72AF433CD00A54479 /* AlgonquinWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CC62AF433CD00A54479 /* AlgonquinWeatherApp.swift */; };
@@ -16,19 +16,19 @@
 		10C69CCB2AF433CE00A54479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CCA2AF433CE00A54479 /* Assets.xcassets */; };
 		10C69CCF2AF433CE00A54479 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CCE2AF433CE00A54479 /* Preview Assets.xcassets */; };
 		10C69CD62AF4393200A54479 /* GeocodingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CD52AF4393200A54479 /* GeocodingModel.swift */; };
-		10C69CDC2AF4685F00A54479 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CDB2AF4685F00A54479 /* LocationModel.swift */; };
+		10C69CDC2AF4685F00A54479 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CDB2AF4685F00A54479 /* Location.swift */; };
 		10C69CDE2AF46A1F00A54479 /* GeocodingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C69CDD2AF46A1E00A54479 /* GeocodingProvider.swift */; };
 		10C69CE62AF54DCD00A54479 /* current-forecast-request.sh in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CE42AF54DCC00A54479 /* current-forecast-request.sh */; };
 		10C69CE72AF54DCD00A54479 /* current-forecast-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 10C69CE52AF54DCC00A54479 /* current-forecast-response.json */; };
 		10CE50512AFD874200267920 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE50502AFD874200267920 /* WeatherService.swift */; };
 		10CE50542AFD876F00267920 /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE50532AFD876F00267920 /* OpenWeather.swift */; };
 		10CE50562AFD87A700267920 /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CE50552AFD87A700267920 /* ErrorEnums.swift */; };
-		10F8126A2AF97BA500EB27A0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F812692AF97BA500EB27A0 /* Location.swift */; };
+		10F8126A2AF97BA500EB27A0 /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F812692AF97BA500EB27A0 /* LocationItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10B45DCE2AFA9CF50048C525 /* LocationWeatherListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherListView.swift; sourceTree = "<group>"; };
-		10B45DD02AFAC6930048C525 /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
+		10B45DD02AFAC6930048C525 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		10B45DD22AFACF750048C525 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		10B45DD62AFB2ECB0048C525 /* CurrentWeatherRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherRowView.swift; sourceTree = "<group>"; };
 		10C69CC32AF433CD00A54479 /* AlgonquinWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlgonquinWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +38,7 @@
 		10C69CCC2AF433CE00A54479 /* AlgonquinWeather.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlgonquinWeather.entitlements; sourceTree = "<group>"; };
 		10C69CCE2AF433CE00A54479 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		10C69CD52AF4393200A54479 /* GeocodingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingModel.swift; sourceTree = "<group>"; };
-		10C69CDB2AF4685F00A54479 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		10C69CDB2AF4685F00A54479 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		10C69CDD2AF46A1E00A54479 /* GeocodingProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodingProvider.swift; sourceTree = "<group>"; };
 		10C69CDF2AF48B0300A54479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		10C69CE42AF54DCC00A54479 /* current-forecast-request.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "current-forecast-request.sh"; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		10CE50502AFD874200267920 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		10CE50532AFD876F00267920 /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
 		10CE50552AFD87A700267920 /* ErrorEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnums.swift; sourceTree = "<group>"; };
-		10F812692AF97BA500EB27A0 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		10F812692AF97BA500EB27A0 /* LocationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		10B45DD82AFB33F30048C525 /* SwiftData Models */ = {
 			isa = PBXGroup;
 			children = (
-				10F812692AF97BA500EB27A0 /* Location.swift */,
+				10F812692AF97BA500EB27A0 /* LocationItem.swift */,
 			);
 			path = "SwiftData Models";
 			sourceTree = "<group>";
@@ -158,8 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				10CE50532AFD876F00267920 /* OpenWeather.swift */,
-				10C69CDB2AF4685F00A54479 /* LocationModel.swift */,
-				10B45DD02AFAC6930048C525 /* CurrentWeatherModel.swift */,
+				10C69CDB2AF4685F00A54479 /* Location.swift */,
+				10B45DD02AFAC6930048C525 /* CurrentWeather.swift */,
 				10C69CDD2AF46A1E00A54479 /* GeocodingProvider.swift */,
 				10CE50502AFD874200267920 /* WeatherService.swift */,
 			);
@@ -239,13 +239,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				10CE50512AFD874200267920 /* WeatherService.swift in Sources */,
-				10C69CDC2AF4685F00A54479 /* LocationModel.swift in Sources */,
+				10C69CDC2AF4685F00A54479 /* Location.swift in Sources */,
 				10C69CC92AF433CD00A54479 /* SearchLocationView.swift in Sources */,
 				10C69CC72AF433CD00A54479 /* AlgonquinWeatherApp.swift in Sources */,
 				10B45DCF2AFA9CF50048C525 /* LocationWeatherListView.swift in Sources */,
-				10B45DD12AFAC6930048C525 /* CurrentWeatherModel.swift in Sources */,
+				10B45DD12AFAC6930048C525 /* CurrentWeather.swift in Sources */,
 				10CE50542AFD876F00267920 /* OpenWeather.swift in Sources */,
-				10F8126A2AF97BA500EB27A0 /* Location.swift in Sources */,
+				10F8126A2AF97BA500EB27A0 /* LocationItem.swift in Sources */,
 				10C69CD62AF4393200A54479 /* GeocodingModel.swift in Sources */,
 				10C69CDE2AF46A1F00A54479 /* GeocodingProvider.swift in Sources */,
 				10CE50562AFD87A700267920 /* ErrorEnums.swift in Sources */,

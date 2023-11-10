@@ -1,5 +1,5 @@
 extension OpenWeather {
-  struct CurrentWeatherModel: Codable {
+  struct CurrentWeather: Codable {
     struct Coord: Codable {
       let lon: Double
       let lat: Double

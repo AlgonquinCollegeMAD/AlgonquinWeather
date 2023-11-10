@@ -2,13 +2,13 @@ import Foundation
 
 extension OpenWeather {
   class WeatherService {
-    func getCurrentWeather(location: LocationModel) async throws -> OpenWeather.CurrentWeatherModel? {
+    func getCurrentWeather(location: Location) async throws -> OpenWeather.CurrentWeather? {
       let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(location.lat)&lon=\(location.lon)&units=metric&&dt=1200&appid=df766d0efdfecd9cf618f52dc2c16a02"
       if let url = URL(string: urlString) {
         let (data, _) = try await URLSession.shared.data(from: url)
         do {
           let decoder = JSONDecoder()
-          let currentWeather = try decoder.decode(OpenWeather.CurrentWeatherModel.self, from: data)
+          let currentWeather = try decoder.decode(OpenWeather.CurrentWeather.self, from: data)
           return currentWeather
         } catch {
           print("Error decoding weather data: \(error)")

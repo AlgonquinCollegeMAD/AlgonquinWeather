@@ -11,7 +11,7 @@ class LocationData {
   let state: String?
   var isFavorite: Bool
   
-  init<T>(model: T) where T: LocationProtocol {
+  init(model: some LocationProtocol) {
     self.isFavorite = false
     self.name = model.name
     self.localNames = model.localNames

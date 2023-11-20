@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#  current-forecast-request.sh
+#  open-weather-current-req-rsp.sh
 #  AlgonquinWeatherApp
 #
 #  Created by Vladimir Cezar on 2023-11-02.

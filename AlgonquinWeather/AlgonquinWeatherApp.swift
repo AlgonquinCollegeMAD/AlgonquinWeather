@@ -4,7 +4,7 @@ import SwiftData
 @main
 struct AlgonquinWeatherApp: App {
 
-  private var geocodingProvider = OpenWeather.GeocodingProvider()
+  private var geocodingProvider = TheWeatherAPI.GeocodingProvider()
   
   var body: some Scene {
     WindowGroup {

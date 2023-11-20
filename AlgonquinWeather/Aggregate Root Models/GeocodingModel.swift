@@ -2,9 +2,9 @@ import SwiftUI
 
 class GeocodingModel: ObservableObject {
   @Published private(set) var locations: [LocationData] = []
-  let geocoder: OpenWeather.GeocodingProvider
+  let geocoder: TheWeatherAPI.GeocodingProvider
   
-  init(geocoder: OpenWeather.GeocodingProvider) {
+  init(geocoder: TheWeatherAPI.GeocodingProvider) {
     self.geocoder = geocoder
   }
   

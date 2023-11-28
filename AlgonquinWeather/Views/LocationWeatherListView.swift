@@ -7,20 +7,24 @@ struct LocationWeatherListView: View {
   @EnvironmentObject var settings: SettingsModel
   
   var body: some View {
-    NavigationView {
-      List(locations, id: \.id) { location in
-        CurrentWeatherRowView(location: location)
-      }
-      .navigationTitle("Weather")
-      .toolbar{
-        ToolbarItem {
-          Button("Add") {
-            self.showSearchLocationSheet = true
+    NavigationStack {
+      VStack{
+        List {
+          ForEach(locations, id: \.id) { location in
+            CurrentWeatherRowView(location: location)
           }
         }
-      }
-      .sheet(isPresented: $showSearchLocationSheet) {
-        SearchLocationView()
+        .navigationTitle("Weather")
+        .toolbar{
+          ToolbarItem {
+            Button("Add") {
+              self.showSearchLocationSheet = true
+            }
+          }
+        }
+        .sheet(isPresented: $showSearchLocationSheet) {
+          SearchLocationView()
+        }
       }
     }
     .environment(\.locale, settings.selectedLanguage.locale())

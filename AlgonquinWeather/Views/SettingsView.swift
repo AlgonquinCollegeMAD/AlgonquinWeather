@@ -10,7 +10,7 @@ struct SettingsView: View {
             Text(language.name()).tag(language.locale().identifier)
           }
         }
-        .pickerStyle(.inline)
+        .pickerStyle(.menu)
       }
       .navigationTitle("Settings")
       .environment(\.locale, settings.selectedLanguage.locale())

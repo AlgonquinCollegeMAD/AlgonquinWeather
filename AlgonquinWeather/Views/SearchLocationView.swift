@@ -9,6 +9,7 @@ fileprivate enum ViewState {
 struct SearchLocationView: View {
   @State fileprivate var viewState: ViewState = .empty
   @Environment(\.dismiss) var dismiss
+  @EnvironmentObject var settings: SettingsModel
   
   var body: some View {
     NavigationStack {
@@ -42,6 +43,7 @@ struct SearchLocationView: View {
           }
         }
       }
+      .environment(\.locale, settings.selectedLanguage.locale())
     }
   }
 }

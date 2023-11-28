@@ -4,6 +4,7 @@ import SwiftData
 struct LocationWeatherListView: View {
   @Query var locations: [LocationData]
   @State private var showSearchLocationSheet = false
+  @EnvironmentObject var settings: SettingsModel
   
   var body: some View {
     NavigationView {
@@ -22,5 +23,6 @@ struct LocationWeatherListView: View {
         SearchLocationView()
       }
     }
+    .environment(\.locale, settings.selectedLanguage.locale())
   }
 }

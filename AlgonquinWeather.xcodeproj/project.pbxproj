@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		104053502B0BBF1300EFEE20 /* TheWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1040534F2B0BBF1300EFEE20 /* TheWeatherAPI.swift */; };
 		104053542B0BC1EF00EFEE20 /* the-weather-geocoding-req-rsp.sh in Resources */ = {isa = PBXBuildFile; fileRef = 104053532B0BC1EF00EFEE20 /* the-weather-geocoding-req-rsp.sh */; };
+		104F6A9F2B154BE90067AEB2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 104F6A9E2B154BE90067AEB2 /* Localizable.xcstrings */; };
+		104F6AA12B154E1B0067AEB2 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F6AA02B154E1B0067AEB2 /* SettingsModel.swift */; };
+		104F6AA32B1550C90067AEB2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F6AA22B1550C90067AEB2 /* SettingsView.swift */; };
 		10B45DCF2AFA9CF50048C525 /* LocationWeatherListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B45DCE2AFA9CF50048C525 /* LocationWeatherListView.swift */; };
 		10B45DD12AFAC6930048C525 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B45DD02AFAC6930048C525 /* CurrentWeather.swift */; };
 		10B45DD32AFACF750048C525 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B45DD22AFACF750048C525 /* WeatherModel.swift */; };
@@ -35,6 +38,9 @@
 /* Begin PBXFileReference section */
 		1040534F2B0BBF1300EFEE20 /* TheWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheWeatherAPI.swift; sourceTree = "<group>"; };
 		104053532B0BC1EF00EFEE20 /* the-weather-geocoding-req-rsp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "the-weather-geocoding-req-rsp.sh"; sourceTree = "<group>"; };
+		104F6A9E2B154BE90067AEB2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		104F6AA02B154E1B0067AEB2 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		104F6AA22B1550C90067AEB2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		10B45DCE2AFA9CF50048C525 /* LocationWeatherListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeatherListView.swift; sourceTree = "<group>"; };
 		10B45DD02AFAC6930048C525 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		10B45DD22AFACF750048C525 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
@@ -129,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				10C69CC62AF433CD00A54479 /* AlgonquinWeatherApp.swift */,
+				104F6A9E2B154BE90067AEB2 /* Localizable.xcstrings */,
 				10CE50552AFD87A700267920 /* ErrorEnums.swift */,
 				10C69CE02AF48D8200A54479 /* Views */,
 				10B45DD82AFB33F30048C525 /* App Models */,
@@ -154,9 +161,10 @@
 		10C69CE02AF48D8200A54479 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				10C69CC82AF433CD00A54479 /* SearchLocationView.swift */,
 				10B45DCE2AFA9CF50048C525 /* LocationWeatherListView.swift */,
+				10C69CC82AF433CD00A54479 /* SearchLocationView.swift */,
 				10B45DD62AFB2ECB0048C525 /* CurrentWeatherRowView.swift */,
+				104F6AA22B1550C90067AEB2 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 			children = (
 				10C69CD52AF4393200A54479 /* GeocodingModel.swift */,
 				10B45DD22AFACF750048C525 /* WeatherModel.swift */,
+				104F6AA02B154E1B0067AEB2 /* SettingsModel.swift */,
 			);
 			path = "Aggregate Root Models";
 			sourceTree = "<group>";
@@ -234,6 +243,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 10C69CBA2AF433CD00A54479;
 			productRefGroup = 10C69CC42AF433CD00A54479 /* Products */;
@@ -252,6 +262,7 @@
 			files = (
 				10C69CE62AF54DCD00A54479 /* open-weather-current-req-rsp.sh in Resources */,
 				10C69CCF2AF433CE00A54479 /* Preview Assets.xcassets in Resources */,
+				104F6A9F2B154BE90067AEB2 /* Localizable.xcstrings in Resources */,
 				10CE50582AFDB42E00267920 /* open-weather-forecast-req-rsp.sh in Resources */,
 				10C69CCB2AF433CE00A54479 /* Assets.xcassets in Resources */,
 				104053542B0BC1EF00EFEE20 /* the-weather-geocoding-req-rsp.sh in Resources */,
@@ -266,9 +277,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				10CE505E2AFDBE6E00267920 /* CurrentWeatherData.swift in Sources */,
+				104F6AA12B154E1B0067AEB2 /* SettingsModel.swift in Sources */,
 				10CE50512AFD874200267920 /* WeatherProvider.swift in Sources */,
 				10C69CDC2AF4685F00A54479 /* Location.swift in Sources */,
 				10CE505A2AFDB5F500267920 /* Forecast.swift in Sources */,
+				104F6AA32B1550C90067AEB2 /* SettingsView.swift in Sources */,
 				10CA8D0B2B06686D007DC801 /* LocationProtocol.swift in Sources */,
 				10C69CC92AF433CD00A54479 /* SearchLocationView.swift in Sources */,
 				104053502B0BBF1300EFEE20 /* TheWeatherAPI.swift in Sources */,

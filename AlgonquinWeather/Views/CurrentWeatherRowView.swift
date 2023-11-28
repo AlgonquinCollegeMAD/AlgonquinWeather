@@ -4,6 +4,7 @@ import SwiftData
 struct CurrentWeatherRowView: View {
   var location: LocationData
   @StateObject var weatherModel: WeatherModel = WeatherModel(weatherProvider: OpenWeather.WeatherProvider())
+  @EnvironmentObject var settings: SettingsModel
   
   var body: some View {
     if let currentWeather = weatherModel.currentWeather {
@@ -39,6 +40,7 @@ struct CurrentWeatherRowView: View {
           }
         Spacer()
       }
+      .environment(\.locale, settings.selectedLanguage.locale())
     }
   }
 }
